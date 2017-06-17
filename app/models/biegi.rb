@@ -1,0 +1,2 @@
+class Biegi < ApplicationRecord
+end
