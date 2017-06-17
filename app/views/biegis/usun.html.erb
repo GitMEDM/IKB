@@ -1,2 +1,34 @@
-<h1>Biegis#usun</h1>
-<p>Find me in app/views/biegis/usun.html.erb</p>
+<h1>USUŃ BIEG: <%= @bieg.nazwa %></h1>
+
+<%= link_to("Wróc", {:action => 'index'})%>
+
+<hr>
+
+<%= form_for(:bieg, :url => {:action => 'kasuj', :id => @bieg.id}) do |pole| %>
+
+	<p>Czy na pewno mam usunąć ten bieg?</p>
+	<table>
+		<tr>
+			<th>DATA</th>
+			<td><%= @bieg.data %></td>
+		</tr>
+		<tr>
+			<th>NAZWA</th>
+			<td><%= @bieg.nazwa %></td>
+		</tr>
+		<tr>
+			<th>MIEJSCOWOŚĆ</th>
+			<td><%= @bieg.miejscowosc %></td>
+		</tr>
+		<tr>
+			<th>DYSTANS</th>
+			<td><%= @bieg.dystans %></td>
+			<td><%= @bieg.jednostkiMiary %></td>
+		</tr>	
+	</table>	
+
+	<div>
+		<%= submit_tag("Usuń") %>
+	</div>
+
+<% end %>

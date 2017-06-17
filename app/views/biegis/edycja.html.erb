@@ -1,2 +1,15 @@
-<h1>Biegis#edycja</h1>
-<p>Find me in app/views/biegis/edycja.html.erb</p>
+<h1>NOWY BIEG: <%= @bieg.nazwa %></h1>
+
+<%= link_to("Powrot", {:action => 'index'})%>
+
+<hr>
+
+<%= form_for(:bieg, :url => {:action => 'aktualizuj', :id => @bieg.id}) do |pole| %>
+
+	<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+	<div>
+		<%= submit_tag("Aktualizuj") %>
+	</div>
+
+<% end %>

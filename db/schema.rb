@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617104030) do
+ActiveRecord::Schema.define(version: 20170617113731) do
 
   create_table "biegis", force: :cascade do |t|
-    t.datetime "data"
+    t.date "data"
     t.string "nazwa"
     t.string "miejscowosc"
-    t.integer "dystans"
+    t.float "dystans"
+    t.string "jednostkiMiary", limit: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "oplata_startowas", force: :cascade do |t|
+    t.integer "biegi_id"
+    t.datetime "data"
+    t.string "nazwa"
+    t.integer "cena"
+    t.string "waluta", default: "PLN"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

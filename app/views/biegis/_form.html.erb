@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<th><%= pole.label(:data, "DATA:") %></th>
+		<td><%= pole.date_field(:data) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:nazwa, "NAZWA:") %></th>
+		<td><%= pole.text_field(:nazwa) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:miejscowosc, "MIEJSCOWOŚĆ:") %></th>
+		<td><%= pole.text_field(:miejscowosc) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:dystans, "DYSTANS:") %></th>
+		<td><%= pole.text_field(:dystans) %></td>
+		<td><%= pole.select(:jednostkiMiary, @jednostkaMiary) %></td>
+	</tr>	
+</table>

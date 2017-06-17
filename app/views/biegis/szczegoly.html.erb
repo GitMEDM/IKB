@@ -1,0 +1,25 @@
+<h1>SZCZEGÓŁY BIEGU: <%= @bieg.nazwa %></h1>
+
+<%= link_to("Powrot", {:action => 'index'})%>
+
+<hr>
+
+<table>
+	<tr>
+		<th>DATA</th>
+		<td><%= @bieg.data %></td>
+	</tr>
+	<tr>
+		<th>NAZWA</th>
+		<td><%= @bieg.nazwa %></td>
+	</tr>
+	<tr>
+		<th>MIEJSCOWOŚĆ</th>
+		<td><%= @bieg.miejscowosc %></td>
+	</tr>
+	<tr>
+		<th>DYSTANS</th>
+		<td><%= @bieg.dystans %></td>
+		<td><%= @bieg.jednostkiMiary %></td>
+	</tr>	
+</table>	

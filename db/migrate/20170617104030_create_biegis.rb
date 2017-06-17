@@ -1,10 +1,11 @@
 class CreateBiegis < ActiveRecord::Migration[5.1]
   def up
     create_table :biegis do |t|
-      t.datetime "data"
+      t.date "data"
       t.string "nazwa"
       t.string "miejscowosc"
-      t.integer "dystans"
+      t.float "dystans"
+      t.string "jednostkiMiary", :limit=>2
       t.timestamps
     end
   end

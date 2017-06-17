@@ -1,2 +1,30 @@
-<h1>Biegis#index</h1>
-<p>Find me in app/views/biegis/index.html.erb</p>
+<h1>BIEGI</h1>
+
+<%= link_to("Dodaj bieg", {:action => 'nowa'})%>
+
+<p>Ilość biegów: <%= @biegi.size %></p>
+
+<table>
+	<tr>
+		<th>DATA</th>
+		<th>NAZWA BIEGU</th>
+		<th>MIEJSCOWOŚĆ</th>
+		<th>DYSTANS</th>
+		<th></th>
+		<th>AKCJA</th>
+	</tr>
+	<% @biegi.each do |bieg| %>
+		<tr>
+			<th><%= bieg.data %></th>
+			<th><%= bieg.nazwa %></th>
+			<th><%= bieg.miejscowosc %></th>
+			<th><%= bieg.dystans %></th>
+			<th><%= bieg.jednostkiMiary %></th>
+			<th>
+				<%= link_to("Szczegóły", {:action => 'szczegoly', :id => bieg.id})%>
+				<%= link_to("Edytuj", {:action => 'edycja', :id => bieg.id})%>
+				<%= link_to("Usuń", {:action => 'usun', :id => bieg.id})%>
+			</th>
+		</tr>
+	<% end %>
+</table>

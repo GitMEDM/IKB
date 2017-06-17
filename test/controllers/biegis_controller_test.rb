@@ -6,7 +6,7 @@ class BiegisControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get pokaz" do
+  test "should get szczegoly" do
     get biegis_pokaz_url
     assert_response :success
   end
