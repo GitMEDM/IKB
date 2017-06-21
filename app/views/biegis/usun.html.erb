@@ -1,34 +1,46 @@
-<h1>USUŃ BIEG: <%= @bieg.nazwa %></h1>
+<div class="hero-unit">
 
-<%= link_to("Wróc", {:action => 'index'})%>
+	<h1>USUŃ BIEG:</h1>
+	<h3><%= @bieg.nazwa %></h3>
 
-<hr>
+	<hr>
 
-<%= form_for(:bieg, :url => {:action => 'kasuj', :id => @bieg.id}) do |pole| %>
+	<%= form_for(:bieg, :url => {:action => 'kasuj', :id => @bieg.id}) do |pole| %>
 
-	<p>Czy na pewno mam usunąć ten bieg?</p>
-	<table>
-		<tr>
-			<th>DATA</th>
-			<td><%= @bieg.data %></td>
-		</tr>
-		<tr>
-			<th>NAZWA</th>
-			<td><%= @bieg.nazwa %></td>
-		</tr>
-		<tr>
-			<th>MIEJSCOWOŚĆ</th>
-			<td><%= @bieg.miejscowosc %></td>
-		</tr>
-		<tr>
-			<th>DYSTANS</th>
-			<td><%= @bieg.dystans %></td>
-			<td><%= @bieg.jednostkiMiary %></td>
-		</tr>	
-	</table>	
+		<div class="alert alert-danger">
+			<p>Czy na pewno chcesz usunąć ten bieg?</p>
+		</div>
+		
+		<table class="table table-striped">
+			<tr>
+				<th>DATA</th>
+				<td><%= @bieg.data %></td>
+			</tr>
+			<tr>
+				<th>NAZWA</th>
+				<td><%= @bieg.nazwa %></td>
+			</tr>
+			<tr>
+				<th>MIEJSCOWOŚĆ</th>
+				<td><%= @bieg.miejscowosc %></td>
+			</tr>
+			<tr>
+				<th>DYSTANS</th>
+				<td>
+				<table>
+					<tr>
+						<td><%= @bieg.dystans %></td>
+						<td><%= @bieg.jednostkaMiary %></td>
+					</tr>
+				</table>
+			</td>
+			</tr>	
+		</table>	
 
-	<div>
-		<%= submit_tag("Usuń") %>
-	</div>
+		<div style="text-align: right;">
+			<%= submit_tag("Usuń", :class => 'btn  btn-danger') %>
+			<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-default')%>
+		</div>
 
-<% end %>
+	<% end %>
+</div>

@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617113731) do
+ActiveRecord::Schema.define(version: 20170619003658) do
 
   create_table "biegis", force: :cascade do |t|
     t.date "data"
     t.string "nazwa"
     t.string "miejscowosc"
     t.float "dystans"
-    t.string "jednostkiMiary", limit: 2
+    t.string "jednostkaMiary", limit: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "oplata_startowas", force: :cascade do |t|
+  create_table "ceny_pakietows", force: :cascade do |t|
     t.integer "biegi_id"
-    t.datetime "data"
-    t.string "nazwa"
-    t.integer "cena"
-    t.string "waluta", default: "PLN"
+    t.date "data"
+    t.float "cena"
+    t.string "waluta", limit: 4
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["biegi_id"], name: "index_ceny_pakietows_on_biegi_id"
   end
 
   create_table "uzytkowniks", force: :cascade do |t|

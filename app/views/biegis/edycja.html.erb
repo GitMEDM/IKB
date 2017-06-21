@@ -1,15 +1,19 @@
-<h1>NOWY BIEG: <%= @bieg.nazwa %></h1>
+<div class="hero-unit">
 
-<%= link_to("Powrot", {:action => 'index'})%>
+	<h1>NOWY BIEG:</h1>
+	<h3><%= @bieg.nazwa %></h3>
 
-<hr>
+	<hr>
 
-<%= form_for(:bieg, :url => {:action => 'aktualizuj', :id => @bieg.id}) do |pole| %>
+	<%= form_for(:bieg, :url => {:action => 'aktualizuj', :id => @bieg.id}) do |pole| %>
 
-	<%= render(:partial => "form", :locals => {:pole => pole}) %>
+		<%= render(:partial => "form", :locals => {:pole => pole}) %>
 
-	<div>
-		<%= submit_tag("Aktualizuj") %>
-	</div>
+		<div style="text-align: right;">
+			<%= submit_tag("Aktualizuj", :class => 'btn  btn-success') %>
+			<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-danger')%>
+		</div>
 
-<% end %>
+	<% end %>
+	
+</div>

@@ -1,0 +1,18 @@
+<table class="table table-striped">
+	<%= pole.hidden_field(:biegi_id, :class => 'form-control') %></td>
+	<tr>
+		<th><%= pole.label(:data, "DATA DO KIEDY:") %></th>
+		<td><%= pole.date_field(:data, :class => 'form-control') %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:cena, "CENA:") %></th>
+		<td>
+			<table>
+				<tr>
+					<td><%= pole.text_field(:cena, :class => 'form-control') %></td>
+					<td><%= pole.select(:waluta, @waluta, :class => 'form-control') %></td>
+				</tr>
+			</table>
+		</td>
+	</tr>	
+</table>

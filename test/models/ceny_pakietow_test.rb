@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OplataStartowaTest < ActiveSupport::TestCase
+class CenyPakietowTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

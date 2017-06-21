@@ -1,0 +1,19 @@
+<div class="hero-unit">
+
+	<h1>EDYTUJ CENE PAKIETU:</h1>
+	<h5><%= @cenaPakietu.data %> | <%= @cenaPakietu.cena %> <%= @cenaPakietu.waluta %></h5>
+
+	<hr>
+
+	<%= form_for(:cenaPakietu, :url => {:action => 'aktualizuj', :bieg_id => @biegs.id, :id => @cenaPakietu.id}) do |pole| %>
+
+		<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+		<div style="text-align: right;">
+			<%= submit_tag("Aktualizuj", :class => 'btn  btn-success') %>
+			<%= link_to("Anuluj", {:action => 'index', :bieg_id => @biegs.id}, :class => 'btn btn-danger')%>
+		</div>
+
+	<% end %>
+	
+</div>

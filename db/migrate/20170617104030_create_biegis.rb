@@ -5,7 +5,7 @@ class CreateBiegis < ActiveRecord::Migration[5.1]
       t.string "nazwa"
       t.string "miejscowosc"
       t.float "dystans"
-      t.string "jednostkiMiary", :limit=>2
+      t.string "jednostkaMiary", :limit=>2
       t.timestamps
     end
   end

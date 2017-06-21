@@ -1,25 +1,121 @@
-<h1>SZCZEGÓŁY BIEGU: <%= @bieg.nazwa %></h1>
+<div class="hero-unit">
 
-<%= link_to("Powrot", {:action => 'index'})%>
+	<h1>SZCZEGÓŁY BIEGU:</h1>
+	<div class="alert alert-warning">
+  		<strong><%= @bieg.nazwa %></strong>, <%= @bieg.miejscowosc %>
+	</div>
 
-<hr>
+	<div class="panel panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title">INFORMACJE PODSTAWOWE</h3>
+  		</div>
+  		<div class="panel-body">
+    		<table class="table table-striped">
+				<tr>
+					<th>DATA</th>
+					<td><%= @bieg.data %></td>
+				</tr>
+				<tr>
+					<th>NAZWA</th>
+					<td><%= @bieg.nazwa %></td>
+				</tr>
+				<tr>
+					<th>MIEJSCOWOŚĆ</th>
+					<td><%= @bieg.miejscowosc %></td>
+				</tr>
+				<tr>
+					<th>DYSTANS</th>
+					<td>
+						<table>
+							<tr>
+								<td><%= @bieg.dystans %></td>
+								<td>&nbsp;</td>
+								<td><%= @bieg.jednostkaMiary %></td>
+							</tr>
+						</table>
+					</td>
+				</tr>	
+			</table>
+  		</div>
+	</div>
 
-<table>
-	<tr>
-		<th>DATA</th>
-		<td><%= @bieg.data %></td>
-	</tr>
-	<tr>
-		<th>NAZWA</th>
-		<td><%= @bieg.nazwa %></td>
-	</tr>
-	<tr>
-		<th>MIEJSCOWOŚĆ</th>
-		<td><%= @bieg.miejscowosc %></td>
-	</tr>
-	<tr>
-		<th>DYSTANS</th>
-		<td><%= @bieg.dystans %></td>
-		<td><%= @bieg.jednostkiMiary %></td>
-	</tr>	
-</table>	
+	<ul class="nav nav-tabs">
+  		<li class="active"><a href="#informacje" data-toggle="tab" aria-expanded="true">INFORMACJE</a></li>
+  		<li class=""><a href="#cenyPakietow" data-toggle="tab" aria-expanded="false">CENY PAKIETÓW</a></li>
+  		<li class=""><a href="#trasaBiegu" data-toggle="tab" aria-expanded="false">TRASA BIEGU</a></li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+  		<div class="tab-pane fade active in" id="informacje">
+    		<table class="table table-striped">
+    			<tr>
+    				<th></th>
+    				<td></td>
+    				<td style="text-align: right;">
+    					<%= link_to("MODYFIKUJ", {:controller => 'ceny_pakietows', :bieg_id => @bieg.id}, :class => 'btn btn-xs btn-info')%>
+    				</td>
+    			</tr>
+    			<tr>
+    				<th>ORGANIZATOR</th>
+    				<td>asdasdas</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<th>BIURO ZAWODÓW</th>
+    				<td>asdasdas</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<th>GODZINA STARTU</th>
+    				<td>asdasdas</td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<th>REGULAMIN</th>
+    				<td>asdasdas</td>
+    				<td></span></td>
+    			</tr>
+    		</table>
+  		</div>
+		<div class="tab-pane fade" id="cenyPakietow">
+			<table class="table table-striped">
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="text-align: right;"><%= link_to("DODAJ", {:controller => 'ceny_pakietows', :action => 'nowa', :bieg_id => @bieg.id}, :class => 'btn btn-xs btn-success')%></td>
+				</tr>
+				<tr class="info">
+					<th>DO KIEDY</th>
+					<th>CENA</th>
+					<th></th>
+				</tr>
+					<% @cenyPakietow.each do |cenaPakietu| %>
+						<tr>
+							<td><%= cenaPakietu.data %></td>
+							<td>
+								<table>
+									<tr>
+										<td><%= cenaPakietu.cena %></td>
+										<td>&nbsp;</td>
+										<td><%= cenaPakietu.waluta %></td>
+									</tr>
+								</table>
+							</td>
+							<td>
+								<%= link_to("EDYTUJ", {:controller => 'ceny_pakietows', :action => 'edycja', :bieg_id => @bieg.id, :id => cenaPakietu.id}, :class => 'btn btn-xs btn-primary')%>
+								<%= link_to("USUŃ", {:controller => 'ceny_pakietows', :action => 'usun', :bieg_id => @bieg.id, :id => cenaPakietu.id}, :class => 'btn btn-xs btn-danger')%>
+							</td>
+						</tr>
+					<% end %>
+				</table>
+				   	
+		</div>
+		<div class="tab-pane fade" id="trasaBiegu"></div>
+	</div>
+
+	<hr>
+
+	<div style="text-align: right;">
+		<%= link_to("Powrot", {:action => 'index'}, :class => 'btn btn-default')%>
+	</div>
+	
+</div>	

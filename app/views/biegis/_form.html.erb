@@ -1,19 +1,25 @@
-<table>
+<table class="table table-striped">
 	<tr>
 		<th><%= pole.label(:data, "DATA:") %></th>
-		<td><%= pole.date_field(:data) %></td>
+		<td><%= pole.date_field(:data, :class => 'form-control') %></td>
 	</tr>
 	<tr>
 		<th><%= pole.label(:nazwa, "NAZWA:") %></th>
-		<td><%= pole.text_field(:nazwa) %></td>
+		<td><%= pole.text_field(:nazwa, :class => 'form-control') %></td>
 	</tr>
 	<tr>
 		<th><%= pole.label(:miejscowosc, "MIEJSCOWOŚĆ:") %></th>
-		<td><%= pole.text_field(:miejscowosc) %></td>
+		<td><%= pole.text_field(:miejscowosc, :class => 'form-control') %></td>
 	</tr>
 	<tr>
 		<th><%= pole.label(:dystans, "DYSTANS:") %></th>
-		<td><%= pole.text_field(:dystans) %></td>
-		<td><%= pole.select(:jednostkiMiary, @jednostkaMiary) %></td>
+		<td>
+			<table>
+				<tr>
+					<td><%= pole.text_field(:dystans, :class => 'form-control') %></td>
+					<td><%= pole.select(:jednostkaMiary, @jednostkaMiary, :class => 'form-control') %></td>
+				</tr>
+			</table>
+		</td>
 	</tr>	
 </table>

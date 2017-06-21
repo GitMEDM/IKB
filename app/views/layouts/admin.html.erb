@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>Indywidualny Kalendarz Biegacza</title>
+    	<%= stylesheet_link_tag('application', :media => 'all' ) %>
+    	<%= javascript_include_tag('application') %>
+		<META name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+  	<!--KLASA GÓWNA-->
+  	<div class="container">
+      <% if !flash[:notice].blank? %>
+        <div class="alert alert-dismissible alert-success" style="text-align: center;">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    	<%= yield %>
+    </div>
+
+    <!--STOPKA-->
+    <div id="footer">
+      <div class="container">
+          <p class="text-muted">
+            Mateusz Misiak | <b>MEDM</b> 2017 &copy;</a>
+          </p>
+      </div>
+    </div>
+
+  </body>
+</html>

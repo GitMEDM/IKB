@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb7cf345-c3b6-475f-902d-0a3745510bdc" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/biegis/pokaz.html.erb" afterPath="$PROJECT_DIR$/app/views/biegis/szczegoly.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/biegis.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/cable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/channels/.keep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/test.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/biegis.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/test.scss" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/biegis_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/biegis_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/biegi.rb" afterPath="$PROJECT_DIR$/app/models/biegi.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/biegis/edycja.html.erb" afterPath="$PROJECT_DIR$/app/views/biegis/edycja.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/biegis/index.html.erb" afterPath="$PROJECT_DIR$/app/views/biegis/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/biegis/nowa.html.erb" afterPath="$PROJECT_DIR$/app/views/biegis/nowa.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/biegis/usun.html.erb" afterPath="$PROJECT_DIR$/app/views/biegis/usun.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20170617104030_create_biegis.rb" afterPath="$PROJECT_DIR$/db/migrate/20170617104030_create_biegis.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/biegis_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/biegis_controller_test.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -41,9 +43,12 @@
       <file leaf-file-name="nowa.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/biegis/nowa.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <marker date="1497709380746" expanded="true" signature="124:254" ph="do ... end" />
+                <marker date="1497709380746" expanded="true" signature="207:245" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +67,21 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/biegis_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <marker date="1497711048505" expanded="true" signature="22:987" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="79:115" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="132:174" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="186:226" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="240:379" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="284:373" ph="if ... end" />
+                <marker date="1497711048505" expanded="true" signature="393:469" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="487:712" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="528:706" ph="if ... end" />
+                <marker date="1497711048505" expanded="true" signature="724:766" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="779:865" ph=" ... end" />
+                <marker date="1497711048505" expanded="true" signature="888:983" ph=" ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -610,16 +628,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497696734461</updated>
-      <workItem from="1497696739218" duration="3331000" />
+      <workItem from="1497696739218" duration="3929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3331000" />
+    <option name="totallyTimeSpent" value="3929000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -653,9 +670,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/biegis/nowa.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1497709380746" expanded="true" signature="124:254" ph="do ... end" />
+            <marker date="1497709380746" expanded="true" signature="207:245" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -678,8 +698,21 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/biegis_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1497711048505" expanded="true" signature="22:987" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="79:115" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="132:174" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="186:226" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="240:379" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="284:373" ph="if ... end" />
+            <marker date="1497711048505" expanded="true" signature="393:469" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="487:712" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="528:706" ph="if ... end" />
+            <marker date="1497711048505" expanded="true" signature="724:766" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="779:865" ph=" ... end" />
+            <marker date="1497711048505" expanded="true" signature="888:983" ph=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>

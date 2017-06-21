@@ -1,0 +1,38 @@
+<div class="hero-unit">
+
+	<h1>USUŃ CENE PAKIETU:</h1>
+	<h5><%= @cenaPakietu.data %> | <%= @cenaPakietu.cena %> <%= @cenaPakietu.waluta %></h5>
+
+	<hr>
+
+	<%= form_for(:cenaPakietu, :url => {:action => 'kasuj', :bieg_id => @biegs.id, :id => @cenaPakietu.id}) do |pole| %>
+
+		<div class="alert alert-danger">
+			<p>Czy na pewno chcesz usunąć tą cene pakietu?</p>
+		</div>
+		
+		<table class="table table-striped">
+			<tr>
+				<th>DATA</th>
+				<td><%= @cenaPakietu.data %></td>
+			</tr>
+			<tr>
+				<th>CENA</th>
+				<td>
+				<table>
+					<tr>
+						<td><%= @cenaPakietu.cena %></td>
+						<td><%= @cenaPakietu.waluta %></td>
+					</tr>
+				</table>
+			</td>
+			</tr>	
+		</table>	
+
+		<div style="text-align: right;">
+			<%= submit_tag("Usuń", :class => 'btn  btn-danger') %>
+			<%= link_to("Anuluj", {:controller => 'biegis', :action => 'szczegoly', :id => @biegs.id}, :class => 'btn btn-default')%>
+		</div>
+
+	<% end %>
+</div>

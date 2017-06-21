@@ -1,0 +1,48 @@
+<div class="hero-unit">
+
+	<h1>CENY PAKIETÓW</h1>
+	<blockquote>
+  		<%= @biegs.data %>
+  		</br>
+  		<strong><%= @biegs.nazwa %></strong>, <%= @biegs.miejscowosc %>
+	</blockquote>
+	<%= @cenyPakietow %>
+	<hr>
+
+	<div>
+		<%= link_to("<< POWRÓT", {:controller => 'biegis', :action => 'szczegoly', :id => @biegs.id}, :class => 'btn btn-mini btn-default')%>
+		<%= link_to("NOWA CENA", {:action => 'nowa', :bieg_id => @biegs.id}, :class => 'btn btn-mini btn-primary')%>
+	</div>
+
+	
+
+	<p style="text-align: right;">Ilość cen pakietów: <%= @cenyPakietow.size %></p>
+
+	<hr>
+
+	<table class="table table-striped">
+		<tr class="info">
+			<th>DO KIEDY</th>
+			<th>CENA</th>
+			<th>AKCJA</th>
+		</tr>
+		<% @cenyPakietow.each do |cenaPakietu| %>
+			<tr>
+				<td><%= cenaPakietu.data %></td>
+				<td>
+					<table>
+						<tr>
+							<td class="center"><%= cenaPakietu.cena %></td>
+							<td> <%= cenaPakietu.waluta %></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<%= link_to("Szczegóły", {:action => 'szczegoly', :id => cenaPakietu.id}, :class => 'btn btn-xs btn-default')%>
+					<%= link_to("Edytuj", {:action => 'edycja', :bieg_id => @biegs.id, :id => cenaPakietu.id}, :class => 'btn btn-xs btn-primary')%>
+					<%= link_to("Usuń", {:action => 'usun', :id => cenaPakietu.id}, :class => 'btn btn-xs btn-danger')%>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+<div>

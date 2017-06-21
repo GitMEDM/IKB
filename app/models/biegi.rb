@@ -1,6 +1,6 @@
 class Biegi < ApplicationRecord
 
-	has_many :oplata_startowas
+	has_many :ceny_pakietows
 
 	scope :sortujData, lambda{order("biegis.data ASC")}
 end
