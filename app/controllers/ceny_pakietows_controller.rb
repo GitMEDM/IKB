@@ -1,6 +1,8 @@
 class CenyPakietowsController < ApplicationController
 
-  layout 'admin'
+  layout 'user'
+
+    before_action :sprawdz_logowanie
 
   def index
     @biegs = Biegi.find(params[:bieg_id])

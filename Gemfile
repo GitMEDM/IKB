@@ -42,6 +42,12 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
 
+# A simple Rails calendar
+gem 'simple_calendar', '~> 2.2', '>= 2.2.6'
+
+#Easy upload management for ActiveRecord
+gem 'paperclip', '~> 5.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

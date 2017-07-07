@@ -4,13 +4,13 @@
 
 	<hr>
 
-	<%= form_for(:bieg, :url => {:action => 'utworz'}) do |pole| %>
+	<%= form_for(:bieg, :url => {:action => 'utworz', :uzytkownik_id => @uzytkownik.id}) do |pole| %>
 
 		<%= render(:partial => "form", :locals => {:pole => pole}) %>
 
 	<div style="text-align: right;">
 		<%= submit_tag("Utwórz", :class => 'btn  btn-success') %>
-		<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-danger')%>
+		<%= link_to("Anuluj", {:action => 'index', :uzytkownik_id => @uzytkownik.id}, :class => 'btn btn-danger')%>
 	</div>
 
 	<% end %>

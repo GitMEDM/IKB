@@ -1,0 +1,24 @@
+<div class="hero-unit">
+	<legend><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></legend>
+
+<% d = DateTime.now %>
+<%= d.strftime("%Y-%m-%d") %>
+<%= DateTime.now("%F")%>
+
+
+	<div class="panel panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title"><b>TWÓJ NAJBLIŻSZY BIEG:</b></h3>
+  		</div>
+  		<div class="panel-body">
+  			
+  				<tr>
+    				<td><%= @biegi[0].data %></td>
+    				<td>&nbsp;|&nbsp;</td>
+    				<td><%= @biegi[0].nazwa + ", " + @biegi[0].miejscowosc %></td>
+    			</tr>
+    		
+  		</div>
+	</div>
+	
+</div>

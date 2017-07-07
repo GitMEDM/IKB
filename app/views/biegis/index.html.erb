@@ -2,7 +2,7 @@
 
 	<h1>BIEGI</h1>
 
-	<%= link_to("Dodaj nowy bieg", {:action => 'nowa'}, :class => 'btn btn-mini btn-primary')%>
+	<%= link_to("Dodaj nowy bieg", {:action => 'nowa', :uzytkownik_id => @uzytkownik.id}, :class => 'btn btn-mini btn-primary')%>
 
 	<p style="text-align: right;">Ilość biegów: <%= @biegi.size %></p>
 

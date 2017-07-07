@@ -1,0 +1,18 @@
+<div class="hero-unit">
+
+	<h1>REJESTRACJA</h1>
+
+	<hr>
+
+	<%= form_for(:rejestracja, :url => {:action => 'utworz'}) do |pole| %>
+
+		<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+	<div style="text-align: right;">
+		<%= submit_tag("Zarejestruj", :class => 'btn  btn-success') %>
+		<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-danger')%>
+	</div>
+
+	<% end %>
+
+</div>

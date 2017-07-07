@@ -1,9 +1,13 @@
 class BiegisController < ApplicationController
   
-  layout 'admin'
+    layout 'user'
+
+    before_action :sprawdz_logowanie
 
   def index
-    @biegi = Biegi.sortujData
+      @uzytkownik = Uzytkownik.find(params[:uzytkownik_id])
+      @biegi = @uzytkownik.biegis.sortujData
+      #@biegi = Biegi.sortujData
   end
 
   def szczegoly
@@ -13,13 +17,17 @@ class BiegisController < ApplicationController
 
   def nowa
     @jednostkaMiary = ["km", "m"]
+    @uzytkownik = Uzytkownik.find(params[:uzytkownik_id])
+    @bieg = Biegi.new({:uzytkownik_id => @uzytkownik.id})
+    #@bieg = Biegi.order('data ASC')
   end
 
   def utworz
+    @uzytkownik = Uzytkownik.find(params[:uzytkownik_id])
     @bieg = Biegi.new(biegi_parametry)
     if @bieg.save
       flash[:notice] = "Bieg został poprawnie dodany."
-      redirect_to(:action => 'index')
+      redirect_to(:action => 'index', :uzytkownik_id => @uzytkownik.id)
     else
       render('nowa')
     end
@@ -52,6 +60,6 @@ class BiegisController < ApplicationController
   end
 
   def biegi_parametry
-    params.require(:bieg).permit(:data, :nazwa, :miejscowosc, :dystans, :jednostkaMiary)
+    params.require(:bieg).permit(:uzytkownik_id, :data, :nazwa, :miejscowosc, :dystans, :jednostkaMiary)
   end
 end

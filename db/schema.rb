@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20170619003658) do
 
   create_table "biegis", force: :cascade do |t|
+    t.integer "uzytkownik_id"
     t.date "data"
     t.string "nazwa"
     t.string "miejscowosc"
@@ -20,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170619003658) do
     t.string "jednostkaMiary", limit: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["uzytkownik_id"], name: "index_biegis_on_uzytkownik_id"
   end
 
   create_table "ceny_pakietows", force: :cascade do |t|
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170619003658) do
     t.string "uzytkownik", limit: 25
     t.string "email", limit: 100, default: "", null: false
     t.string "telefon", default: "", null: false
+    t.boolean "admin", default: false
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

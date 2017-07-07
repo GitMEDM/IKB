@@ -1,0 +1,17 @@
+<div class="hero-unit">
+
+	<legend>USUWANIE KONTA UŻYTKOWNIKA</legend>
+
+	<%= form_for(:uzytkownik, :url => {:action => 'kasuj', :id => @uzytkownik.id}) do |pole| %>
+
+		<div class="alert alert-danger">
+			<p>Czy na pewno chcesz usunąć to konto użytkownika <b><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></b>?</p>
+			</br>
+			<div style="text-align: right;">
+				<%= submit_tag("Usuń", :class => 'btn  btn-danger') %>
+				<%= link_to("Anuluj", {:action => 'index'}, :class => 'btn btn-default')%>
+			</div>
+		</div>	
+		
+	<% end %>
+</div>
